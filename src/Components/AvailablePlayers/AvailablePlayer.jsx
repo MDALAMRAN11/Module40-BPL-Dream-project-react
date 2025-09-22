@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const AvailablePlayer = ({
     player,
@@ -13,13 +14,29 @@ const AvailablePlayer = ({
             playerData.price.split("USD").join("").split(",").join("")
         );
         if (availableBalance < playerPrice) {
-            alert("Not Enough Balance You Have🥹");
+            toast("Not Enough Balance You Have🥹");
             return;
         }
+
+        if (selectedPlayer.length < 6) {
+            const newSelectedPlayer = [...selectedPlayer, player];
+            setSelectedPlayer(newSelectedPlayer);
+
+            newSelectedPlayer.length === 3
+                ? toast("You Have 3 Players Left To Select")
+                : newSelectedPlayer.length === 5
+                ? toast("You Have 1 Player Left To Select")
+                : newSelectedPlayer.length === 6
+                ? toast(
+                      "😍Congratulations🎉🎉 You Have Completed Your Selection"
+                  )
+                : null;
+        } else {
+            return toast("You cant select more than 6 player");
+        }
+
         setAvailableBalance(availableBalance - playerPrice);
-        const newSelectedPlayer = [...selectedPlayer, player];
-        setSelectedPlayer(newSelectedPlayer);
-        console.log(newSelectedPlayer);
+        //console.log(newSelectedPlayer);
     };
     return (
         <div>
@@ -60,16 +77,18 @@ const AvailablePlayer = ({
                     <div className="flex justify-between items-center">
                         <p className="font-extrabold">Price: {player.price}</p>
                         <button
-                            // disabled={selected}
+                            disabled={selected}
                             onClick={() => {
                                 setSelected(true);
                                 handleBalance(player);
                             }}
-                            className={`btn btn-xs sm:btn-sm md:btn-md ${
-                                selected ? "bg-red-400" : ""
-                            }`}
+                            className={`btn btn-xs sm:btn-sm md:btn-md`}
                         >
-                            {selected ? "Selected" : "Choose Player"}
+                            {selectedPlayer.length >= 6
+                                ? "Player Selected"
+                                : selected
+                                ? "Selected"
+                                : "Choose Player"}
                         </button>
                     </div>
                 </div>

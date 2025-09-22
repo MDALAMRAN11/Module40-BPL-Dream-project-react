@@ -2,6 +2,7 @@ import React, { Suspense, useState } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import AvailablePlayers from "./Components/AvailablePlayers/AvailablePlayers";
 import SelectedPlayers from "./Components/SelectedPlayers/SelectedPlayers";
+import { ToastContainer } from "react-toastify";
 
 const fetchPlayersData = async () => {
     const res = await fetch("/players.json");
@@ -14,12 +15,27 @@ const App = () => {
     const [selectedPlayer, setSelectedPlayer] = useState([]);
     const [availableBalance, setAvailableBalance] = useState(60000000);
     const [toggleButton, settoggleButton] = useState(true);
+
+    const deleteHandleSelectedPlayer = (player) => {
+        //console.log("you clicked", player);
+        const newPlayer = selectedPlayer.filter((p) => p.id !== player.id);
+        setSelectedPlayer(newPlayer);
+        const newBalance =
+            parseInt(availableBalance) +
+            parseInt(player.price.split("USD").join("").split(",").join(""));
+        //console.log(newBalance);
+        setAvailableBalance(newBalance);
+    };
     return (
-        <div>
+        <>
             <Navbar availableBalance={availableBalance}></Navbar>
             <div className="w-11/12 mx-auto">
                 <div className="flex justify-between items-center my-5">
-                    <p className="font-bold">Available Players</p>
+                    <p className="font-bold">
+                        {toggleButton
+                            ? "Available Players"
+                            : `Selected Player (${selectedPlayer.length}/6)`}
+                    </p>
                     <div>
                         <button
                             onClick={() => settoggleButton(true)}
@@ -35,7 +51,7 @@ const App = () => {
                                 !toggleButton ? "bg-[#E7FE29]" : ""
                             }`}
                         >
-                            Selected (<span>0</span>)
+                            Selected (<span>{selectedPlayer.length}</span>)
                         </button>
                     </div>
                 </div>
@@ -59,9 +75,13 @@ const App = () => {
                     ></AvailablePlayers>
                 </Suspense>
             ) : (
-                <SelectedPlayers></SelectedPlayers>
+                <SelectedPlayers
+                    selectedPlayer={selectedPlayer}
+                    deleteHandleSelectedPlayer={deleteHandleSelectedPlayer}
+                ></SelectedPlayers>
             )}
-        </div>
+            <ToastContainer></ToastContainer>
+        </>
     );
 };
 
