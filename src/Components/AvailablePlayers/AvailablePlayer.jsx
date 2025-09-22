@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
-const AvailablePlayer = ({ player }) => {
+const AvailablePlayer = ({
+    player,
+    setAvailableBalance,
+    availableBalance,
+    selectedPlayer,
+    setSelectedPlayer,
+}) => {
+    const [selected, setSelected] = useState(false);
+    const handleBalance = (playerData) => {
+        const playerPrice = parseInt(
+            playerData.price.split("USD").join("").split(",").join("")
+        );
+        if (availableBalance < playerPrice) {
+            alert("Not Enough Balance You Have🥹");
+            return;
+        }
+        setAvailableBalance(availableBalance - playerPrice);
+        const newSelectedPlayer = [...selectedPlayer, player];
+        setSelectedPlayer(newSelectedPlayer);
+        console.log(newSelectedPlayer);
+    };
     return (
         <div>
             <div className="card bg-base-100 shadow-sm">
@@ -39,8 +59,17 @@ const AvailablePlayer = ({ player }) => {
                     </div>
                     <div className="flex justify-between items-center">
                         <p className="font-extrabold">Price: {player.price}</p>
-                        <button className="btn btn-xs sm:btn-sm md:btn-md">
-                            Choose Player
+                        <button
+                            // disabled={selected}
+                            onClick={() => {
+                                setSelected(true);
+                                handleBalance(player);
+                            }}
+                            className={`btn btn-xs sm:btn-sm md:btn-md ${
+                                selected ? "bg-red-400" : ""
+                            }`}
+                        >
+                            {selected ? "Selected" : "Choose Player"}
                         </button>
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import React from "react";
 import navImg from "../../assets/logo.png";
 import bannerMain from "../../assets/banner-main.png";
 import bgShadow from "../../assets/bg-shadow.png";
-const Navbar = () => {
+const Navbar = ({ availableBalance }) => {
     return (
         <div className="w-11/12 mx-auto">
             <div className="flex mb-5">
@@ -28,7 +28,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <a className="btn">
-                        <span>0</span> Coins💲
+                        <span>{availableBalance}</span>💲
                     </a>
                 </div>
             </div>

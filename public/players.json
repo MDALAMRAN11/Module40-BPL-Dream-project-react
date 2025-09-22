@@ -14,7 +14,7 @@
         "strikeRate": 135.4,
         "economy": 6.8,
         "image": "https://i.ibb.co.com/bR1tGfPg/post-image-207db05.jpg",
-        "price": 4500000
+        "price": "450,0000 USD"
     },
     {
         "id": 2,
@@ -31,7 +31,7 @@
         "strikeRate": 129.7,
         "economy": 0,
         "image": "https://i.ibb.co.com/gbgs2RJv/image-2023-07-07-192134579.jpg",
-        "price": 3500000
+        "price": "350,0000 USD"
     },
     {
         "id": 3,
@@ -48,7 +48,7 @@
         "strikeRate": 127.2,
         "economy": 0,
         "image": "https://i.ibb.co.com/gZ7NthRH/2021-07-23-T064306-Z-1-LYNXMPEH6-M09-C-RTROPTP-3-CRICKET-WORLDCUP-WIN-BGD-1630903251878-166227441707.jpg",
-        "price": 1100000
+        "price": "110,0000 USD"
     },
     {
         "id": 4,
@@ -65,7 +65,7 @@
         "strikeRate": 125.6,
         "economy": 7.5,
         "image": "https://i.ibb.co.com/DfYF381b/Mahmudullah-Riyad-Biography.jpg",
-        "price": 1400000
+        "price": "140,0000 USD"
     },
     {
         "id": 5,
@@ -82,7 +82,7 @@
         "strikeRate": 100.3,
         "economy": 7.1,
         "image": "https://i.ibb.co.com/p6qQrrwf/Mustafizur-Rahman-1.jpg",
-        "price": 1800000
+        "price": "180,0000 USD"
     },
     {
         "id": 6,
@@ -99,7 +99,7 @@
         "strikeRate": 132.9,
         "economy": 0,
         "image": "https://i.ibb.co.com/rRd6DvL9/350668.webp",
-        "price": 1000000
+        "price": "100,0000 USD"
     },
     {
         "id": 7,
@@ -116,7 +116,7 @@
         "strikeRate": 169.2,
         "economy": 8.3,
         "image": "https://i.ibb.co.com/8nXBw6t3/1682598187417-Andre-Russell.jpg",
-        "price": 3000000
+        "price": "300,0000 USD"
     },
     {
         "id": 8,
@@ -133,7 +133,7 @@
         "strikeRate": 156.8,
         "economy": 7.9,
         "image": "https://i.ibb.co.com/Qs2ry4y/OIP.webp",
-        "price": 2200000
+        "price": "220,0000 USD"
     },
     {
         "id": 9,
@@ -150,7 +150,7 @@
         "strikeRate": 142.5,
         "economy": 6.2,
         "image": "https://i.ibb.co.com/PvryJ5HL/OIP-1.webp",
-        "price": 2000000
+        "price": "200,0000 USD"
     },
     {
         "id": 10,
@@ -167,7 +167,7 @@
         "strikeRate": 162.5,
         "economy": 0,
         "image": "https://i.ibb.co.com/Tx17z3Ts/OIF.webp",
-        "price": 1800000
+        "price": "180,0000 USD"
     },
     {
         "id": 11,
@@ -184,7 +184,7 @@
         "strikeRate": 155.3,
         "economy": 8.1,
         "image": "https://i.ibb.co.com/xqKt4CDL/OIP-2.webp",
-        "price": 1000000
+        "price": "100,0000 USD"
     },
     {
         "id": 12,
@@ -201,6 +201,6 @@
         "strikeRate": 167.8,
         "economy": 7.6,
         "image": "https://i.ibb.co.com/4nWrk4qc/OIP-3.webp",
-        "price": 1500000
+        "price": "150,0000 USD"
     }
 ]
