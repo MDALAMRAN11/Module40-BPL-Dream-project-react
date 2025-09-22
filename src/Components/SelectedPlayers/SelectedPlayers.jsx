@@ -2,7 +2,7 @@ import React from "react";
 import SelectedPlayer from "./SelectedPlayer";
 
 const SelectedPlayers = ({
-    handleAddMorePlayers = { handleAddMorePlayers },
+    handleAddMorePlayers,
     selectedPlayer: players,
     deleteHandleSelectedPlayer,
 }) => {
