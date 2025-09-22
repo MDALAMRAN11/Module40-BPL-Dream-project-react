@@ -32,7 +32,7 @@ const AvailablePlayer = ({
                   )
                 : null;
         } else {
-            return toast("You cant select more than 6 player");
+            return toast("You can't select more than 6 player");
         }
 
         setAvailableBalance(availableBalance - playerPrice);

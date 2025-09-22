@@ -16,6 +16,10 @@ const App = () => {
     const [availableBalance, setAvailableBalance] = useState(60000000);
     const [toggleButton, settoggleButton] = useState(true);
 
+    const handleAddMorePlayers = () => {
+        console.log("clicked more player");
+        settoggleButton(true);
+    };
     const deleteHandleSelectedPlayer = (player) => {
         //console.log("you clicked", player);
         const newPlayer = selectedPlayer.filter((p) => p.id !== player.id);
@@ -76,6 +80,7 @@ const App = () => {
                 </Suspense>
             ) : (
                 <SelectedPlayers
+                    handleAddMorePlayers={handleAddMorePlayers}
                     selectedPlayer={selectedPlayer}
                     deleteHandleSelectedPlayer={deleteHandleSelectedPlayer}
                 ></SelectedPlayers>
